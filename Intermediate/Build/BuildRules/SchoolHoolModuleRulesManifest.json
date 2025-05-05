@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\UE\\Proj\\MadMuffinStudios_Games\\SchoolHool\\Project\\SchoolHool\\Source\\SchoolHool\\SchoolHool.Build.cs",
+		"E:\\UE\\Proj\\MadMuffinStudios_Games\\SchoolHool\\Project\\SchoolHool\\Source\\SchoolHool.Target.cs",
+		"E:\\UE\\Proj\\MadMuffinStudios_Games\\SchoolHool\\Project\\SchoolHool\\Source\\SchoolHoolEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.4"
+}

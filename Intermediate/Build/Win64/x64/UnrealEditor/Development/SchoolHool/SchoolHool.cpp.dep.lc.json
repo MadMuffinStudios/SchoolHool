@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue\\proj\\madmuffinstudios_games\\schoolhool\\project\\schoolhool\\source\\schoolhool\\schoolhool.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue\\proj\\madmuffinstudios_games\\schoolhool\\project\\schoolhool\\intermediate\\build\\win64\\x64\\schoolhooleditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\ue\\proj\\madmuffinstudios_games\\schoolhool\\project\\schoolhool\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\schoolhool\\definitions.schoolhool.h",
+            "e:\\ue\\proj\\madmuffinstudios_games\\schoolhool\\project\\schoolhool\\source\\schoolhool\\schoolhool.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
