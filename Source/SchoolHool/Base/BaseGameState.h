@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SCHOOLHOOL_API ABaseGameState : public AGameState
+class SCHOOLHOOL_API ABaseGameState : public AGameStateBase
 {
 	GENERATED_BODY()
 	
