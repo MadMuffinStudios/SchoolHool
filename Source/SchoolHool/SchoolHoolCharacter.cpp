@@ -122,8 +122,32 @@ void ASchoolHoolCharacter::Look(const FInputActionValue& Value)
 
 	if (Controller != nullptr)
 	{
-		// add yaw and pitch input to controller
-		AddControllerYawInput(LookAxisVector.X);
-		AddControllerPitchInput(LookAxisVector.Y);
+		if (bShouldLookClamp)
+		{
+			FRotator ControlRotation = Controller->GetControlRotation();
+			FRotator ActorRotation = GetActorRotation();
+
+			float NewYaw = ControlRotation.Yaw + LookAxisVector.X;
+			float NewPitch = ControlRotation.Pitch - LookAxisVector.Y;
+
+			float RelativeYaw = FMath::FindDeltaAngleDegrees(ActorRotation.Yaw, NewYaw);
+			float ClampedRelativeYaw = FMath::Clamp(RelativeYaw, ClampMinMaxX[0], ClampMinMaxX[1]);
+			NewYaw = ActorRotation.Yaw + ClampedRelativeYaw;
+
+			NewPitch = FMath::Clamp(NewPitch, ClampMinMaxY[0], ClampMinMaxY[1]);
+
+			Controller->SetControlRotation(FRotator(NewPitch, NewYaw, 0.0f));
+		}
+		else
+		{
+			// add yaw and pitch input to controller
+			AddControllerYawInput(LookAxisVector.X);
+			AddControllerPitchInput(LookAxisVector.Y);
+		}
 	}
+}
+
+void ASchoolHoolCharacter::LookClamp(bool Clamp)
+{
+	bShouldLookClamp = Clamp;
 }

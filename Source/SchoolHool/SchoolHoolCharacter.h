@@ -44,10 +44,22 @@ class ASchoolHoolCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+
+	UPROPERTY(EditAnywhere)
+	bool bShouldLookClamp;
+
+	
+	
+	
 public:
 	ASchoolHoolCharacter();
 	
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Look)
+	TArray<float> ClampMinMaxX = {-10, 10};
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Look)
+	TArray<float> ClampMinMaxY = {-10, 10};
+	
 protected:
 
 	/** Called for movement input */
@@ -55,8 +67,10 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
-			
 
+	UFUNCTION(BlueprintCallable)
+	void LookClamp(bool Clamp);
+	
 protected:
 
 	virtual void NotifyControllerChanged() override;
