@@ -66,6 +66,7 @@ protected:
 	void Move(const FInputActionValue& Value);
 
 	/** Called for looking input */
+	UFUNCTION(BlueprintCallable)
 	void Look(const FInputActionValue& Value);
 
 	UFUNCTION(BlueprintCallable)
